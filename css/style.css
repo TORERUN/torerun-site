@@ -1,0 +1,461 @@
+/* =============================================
+   NPO法人 ToRerun
+   Reference-faithful design (GE Creation style)
+   White-base / Photo-centric / Elegant
+   ============================================= */
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  color:#444;background:#fff;
+  line-height:1.85;letter-spacing:.04em;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none;transition:opacity .25s}
+a:hover{opacity:.7}
+ul,ol{list-style:none}
+button,input,select,textarea{font-family:inherit;font-size:inherit;border:none;outline:none;background:none;-webkit-appearance:none;appearance:none}
+::selection{background:#2F6B5F;color:#fff}
+
+.container{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+.container--sm{max-width:680px}
+
+/* ---------- Animation ---------- */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.is-visible{opacity:1;transform:translateY(0)}
+.delay-05{transition-delay:.1s}.delay-1{transition-delay:.2s}.delay-15{transition-delay:.3s}.delay-2{transition-delay:.4s}
+
+/* =============================================
+   BUTTONS  (c-btn)
+   参考サイト: 角丸ボーダー + 右矢印ライン
+   ============================================= */
+.c-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:.82rem;font-weight:500;letter-spacing:.08em;
+  padding:14px 36px;border-radius:60px;
+  border:1.5px solid #2F6B5F;color:#2F6B5F;
+  background:#fff;cursor:pointer;
+  transition:background .3s,color .3s,border-color .3s;
+  position:relative;
+}
+.c-btn:hover{background:#2F6B5F;color:#fff;opacity:1}
+.c-btn__arrow{display:inline-block;width:22px;height:1px;background:currentColor;position:relative}
+.c-btn__arrow::after{
+  content:'';position:absolute;right:0;top:50%;
+  width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;
+  transform:translateY(-50%) rotate(45deg);
+}
+.c-btn--fill{background:#2F6B5F;color:#fff}
+.c-btn--fill:hover{background:#245249;border-color:#245249}
+.c-btn--accent{border-color:#C8A86B;color:#C8A86B;background:#fff}
+.c-btn--accent:hover{background:#C8A86B;color:#fff}
+.c-btn--sm{padding:10px 24px;font-size:.78rem}
+.c-btn--lg{padding:16px 44px;font-size:.9rem}
+
+/* =============================================
+   HEADER
+   ============================================= */
+.header{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  transition:background .4s,box-shadow .4s;
+}
+.header.is-scrolled{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:0 1px 12px rgba(0,0,0,.04);
+}
+.header__inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1200px;margin:0 auto;padding:0 24px;height:70px;
+}
+.header__logo{display:flex;align-items:baseline;gap:8px}
+.header__logo-mark{
+  font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;
+  color:#fff;transition:color .3s;
+}
+.header.is-scrolled .header__logo-mark{color:#2F6B5F}
+.header__logo-sub{font-size:.58rem;color:rgba(255,255,255,.6);letter-spacing:.14em;transition:color .3s}
+.header.is-scrolled .header__logo-sub{color:#999}
+
+/* Desktop gnav */
+.gnav{display:none}
+@media(min-width:1024px){
+  .gnav{display:flex;align-items:center;gap:28px}
+  .gnav__list{display:flex;gap:26px}
+  .gnav__list a{
+    font-size:.78rem;font-weight:400;color:rgba(255,255,255,.85);
+    letter-spacing:.03em;transition:color .3s;
+  }
+  .header.is-scrolled .gnav__list a{color:#555}
+  .gnav__list a:hover{opacity:1}
+  .header.is-scrolled .gnav__list a:hover{color:#2F6B5F}
+  .gnav__btns{display:flex;gap:10px}
+  .gnav__btn{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.75rem;font-weight:500;letter-spacing:.04em;
+    padding:9px 20px;border-radius:6px;transition:all .3s;
+  }
+  .gnav__btn--contact{background:#2F6B5F;color:#fff}
+  .gnav__btn--contact:hover{background:#245249;opacity:1}
+}
+
+/* Hamburger */
+.hamburger{display:flex;flex-direction:column;gap:6px;cursor:pointer;width:24px;z-index:1100}
+.hamburger span{display:block;width:100%;height:1.5px;background:#fff;transition:all .3s}
+.header.is-scrolled .hamburger span{background:#333}
+.hamburger.is-open span{background:#333 !important}
+.hamburger.is-open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.is-open span:nth-child(2){opacity:0}
+.hamburger.is-open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+@media(min-width:1024px){.hamburger{display:none}}
+
+/* Mobile overlay */
+@media(max-width:1023px){
+  .gnav{
+    position:fixed;top:0;right:-100%;width:80vw;max-width:360px;height:100dvh;
+    background:#fff;z-index:1050;padding:96px 32px 40px;
+    display:flex;flex-direction:column;gap:20px;
+    transition:right .35s ease;box-shadow:-6px 0 30px rgba(0,0,0,.06);
+  }
+  .gnav.is-open{right:0}
+  .gnav__list{display:flex;flex-direction:column}
+  .gnav__list li{border-bottom:1px solid #f0f0f0}
+  .gnav__list a{display:block;padding:14px 0;font-size:.92rem;color:#333 !important}
+  .gnav__btns{margin-top:8px}
+  .gnav__btn--contact{
+    display:flex;justify-content:center;width:100%;
+    padding:14px;border-radius:8px;background:#2F6B5F;color:#fff;font-size:.9rem;
+  }
+}
+
+/* =============================================
+   HERO  –  参考サイト忠実再現
+   ============================================= */
+.hero{position:relative;width:100%;height:100vh;height:100svh;overflow:hidden}
+.hero__img{position:absolute;inset:0}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+
+/* ヒーロー画像自体にテキストが含まれるためオーバーレイは控えめ */
+.hero__overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.05) 0%,rgba(0,0,0,.1) 100%);
+}
+
+.hero__body{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;justify-content:center;
+  height:100%;padding:0 28px;max-width:700px;
+}
+.hero__catch{
+  font-size:clamp(1.4rem,4vw,2.2rem);font-weight:700;
+  color:#fff;line-height:1.75;letter-spacing:.05em;
+  text-shadow:0 2px 16px rgba(0,0,0,.12);
+}
+.hero__org{
+  font-size:.82rem;font-weight:400;color:rgba(255,255,255,.8);
+  letter-spacing:.12em;margin-top:14px;
+}
+
+/* 参考サイトの大きな筆記体テキスト */
+.hero__script{
+  position:absolute;bottom:6%;left:5%;z-index:3;
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(3rem,10vw,6.5rem);
+  font-weight:300;
+  color:rgba(255,255,255,.15);
+  line-height:1;pointer-events:none;
+  letter-spacing:.08em;
+}
+
+.hero__scroll{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.hero__scroll span{font-size:.58rem;color:rgba(255,255,255,.45);letter-spacing:.28em;font-weight:300}
+.hero__scroll i{
+  display:block;width:1px;height:32px;background:rgba(255,255,255,.2);position:relative;overflow:hidden;
+}
+.hero__scroll i::after{
+  content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;
+  background:#fff;animation:scrollLine 2s infinite;
+}
+@keyframes scrollLine{0%{top:-100%}100%{top:100%}}
+
+/* =============================================
+   SECTIONS (shared)
+   ============================================= */
+.sec{padding:100px 0;position:relative;overflow:hidden}
+.sec--cream{background:#F6F4EF}
+.sec--nopad-top{padding-top:0}
+
+.sec__head{text-align:center;margin-bottom:52px}
+.sec__head--light .sec__en{color:rgba(255,255,255,.55)}
+.sec__head--light .sec__title{color:#fff}
+
+.sec__en{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;font-weight:400;color:#C8A86B;letter-spacing:.24em;
+  margin-bottom:10px;
+}
+.sec__en--light{color:rgba(255,255,255,.55)}
+.sec__title{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700;color:#333;letter-spacing:.04em}
+.sec__title--light{color:#fff}
+.sec__lead{margin-top:14px;font-size:.85rem;color:#999;line-height:1.9}
+.sec__cta{text-align:center;margin-top:48px}
+
+@media(min-width:768px){.sec{padding:130px 0}}
+
+/* =============================================
+   ABOUT  –  参考サイト忠実: テキストのみ + 背景装飾文字
+   ============================================= */
+.about{
+  max-width:780px;
+  position:relative;
+  padding-bottom:80px;
+}
+.about__deco{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(3.5rem,9vw,6rem);
+  font-weight:300;
+  color:rgba(0,0,0,.04);
+  line-height:1;position:absolute;top:-20px;left:-10px;
+  pointer-events:none;letter-spacing:.06em;
+}
+.about__en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;font-weight:400;color:#C8A86B;letter-spacing:.24em;
+  margin-bottom:20px;
+}
+.about__heading{
+  font-size:clamp(1.25rem,3vw,1.7rem);font-weight:700;
+  color:#333;line-height:2;margin-bottom:32px;
+}
+.about__text p{
+  font-size:.88rem;color:#777;line-height:2.1;margin-bottom:12px;
+}
+.about__text br{display:none}
+@media(min-width:768px){
+  .about__text br{display:inline}
+}
+
+/* =============================================
+   POINTS  –  POINT 01 / 02 / 03 + 丸写真
+   ============================================= */
+.points{
+  display:grid;grid-template-columns:1fr;gap:40px;
+  max-width:900px;margin:0 auto;
+}
+.point{text-align:center}
+.point__head{margin-bottom:20px}
+.point__label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;font-weight:400;color:#C8A86B;letter-spacing:.2em;
+  margin-right:6px;
+}
+.point__num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.8rem;font-weight:300;color:#333;line-height:1;
+}
+.point__icon{
+  width:150px;height:150px;border-radius:50%;overflow:hidden;
+  margin:0 auto 20px;
+  border:1px solid #e8e5de;
+}
+.point__icon img{width:100%;height:100%;object-fit:cover}
+.point__title{
+  font-size:.9rem;font-weight:500;color:#555;line-height:1.8;
+}
+
+@media(min-width:768px){
+  .points{grid-template-columns:repeat(3,1fr);gap:48px}
+}
+
+/* =============================================
+   PHILOSOPHY – MISSION / VISION / VALUE
+   ============================================= */
+.philosophy{position:relative;padding-top:50px}
+.philosophy__deco{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(3rem,9vw,5.5rem);font-weight:300;
+  color:rgba(0,0,0,.04);line-height:1;
+  margin-bottom:-18px;pointer-events:none;letter-spacing:.06em;
+}
+.philosophy__head{text-align:center;margin-bottom:56px}
+.philosophy__catch{
+  font-size:clamp(1.15rem,2vw,1.4rem);font-weight:500;
+  color:#333;line-height:2;margin-top:20px;
+}
+.philosophy__grid{
+  display:grid;grid-template-columns:1fr;gap:24px;
+  max-width:960px;margin:0 auto;
+}
+.phil-card{
+  background:#fff;border-radius:14px;padding:42px 30px 38px;
+  border:1px solid #ebe8e2;position:relative;
+  transition:transform .3s,box-shadow .3s;
+}
+.phil-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.05)}
+.phil-card--mission{border-top:4px solid #2F6B5F}
+.phil-card--vision{border-top:4px solid #C8A86B}
+.phil-card--value{border-top:4px solid #8ea8a4}
+.phil-card__en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;letter-spacing:.24em;color:#C8A86B;
+  display:block;margin-bottom:10px;
+}
+.phil-card__title{font-size:1.1rem;font-weight:700;color:#333;margin-bottom:18px;letter-spacing:.04em}
+.phil-card__lead{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.05rem;font-weight:500;color:#2F6B5F;line-height:1.9;margin-bottom:12px;
+}
+.phil-card--vision .phil-card__lead{color:#C8A86B}
+.phil-card--value .phil-card__lead{color:#8ea8a4}
+.phil-card__body{font-size:.84rem;color:#777;line-height:1.9}
+
+@media(min-width:768px){
+  .philosophy{padding-top:60px}
+  .philosophy__grid{grid-template-columns:repeat(3,1fr);gap:28px}
+  .phil-card{padding:46px 28px 42px}
+}
+
+/* =============================================
+   ACTIVITY CARDS
+   ============================================= */
+.act-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+}
+.act-card{
+  display:block;background:#fff;border-radius:10px;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.act-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,.07);opacity:1}
+.act-card__img{aspect-ratio:4/3;overflow:hidden}
+.act-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.act-card:hover .act-card__img img{transform:scale(1.04)}
+.act-card__body{padding:14px 12px 18px}
+.act-card__body h3{font-size:.85rem;font-weight:600;color:#333;margin-bottom:4px}
+.act-card__body p{font-size:.72rem;color:#999;line-height:1.7}
+
+@media(min-width:768px){
+  .act-grid{grid-template-columns:repeat(4,1fr);gap:18px}
+  .act-card__body{padding:18px 16px 22px}
+  .act-card__body h3{font-size:.92rem;margin-bottom:6px}
+  .act-card__body p{font-size:.8rem}
+}
+
+/* =============================================
+   MESSAGE
+   ============================================= */
+.msg{
+  display:flex;flex-direction:column;gap:36px;
+  max-width:880px;margin:0 auto;
+}
+.msg__photo{text-align:center;flex-shrink:0}
+.msg__photo>img{
+  width:180px;height:240px;object-fit:cover;border-radius:10px;margin:0 auto;
+  box-shadow:0 6px 24px rgba(0,0,0,.07);
+}
+.msg__name{margin-top:14px}
+.msg__role{display:block;font-size:.65rem;color:#C8A86B;letter-spacing:.18em}
+.msg__nm{display:block;font-size:1.05rem;font-weight:700;color:#333;letter-spacing:.06em;margin-top:2px}
+.msg__lead{
+  font-size:1rem;font-weight:500;color:#333;line-height:1.9;
+  border-left:3px solid #C8A86B;padding-left:18px;margin-bottom:22px;
+}
+.msg__content p{font-size:.86rem;color:#777;line-height:2;margin-bottom:12px}
+
+@media(min-width:768px){
+  .msg{flex-direction:row;gap:52px;align-items:flex-start}
+  .msg__photo>img{width:210px;height:280px}
+}
+
+/* =============================================
+   FORM
+   ============================================= */
+.form__row{margin-bottom:22px}
+.form__label{display:block;font-size:.82rem;font-weight:500;color:#333;margin-bottom:6px}
+.form__req{
+  display:inline-block;font-size:.58rem;background:#C8A86B;color:#fff;
+  padding:1px 7px;border-radius:3px;margin-left:8px;vertical-align:middle;
+}
+.form__input,.form__select,.form__textarea{
+  width:100%;padding:12px 14px;background:#F6F4EF;
+  border:1.5px solid transparent;border-radius:6px;
+  font-size:.88rem;color:#333;transition:border-color .3s,background .3s;
+}
+.form__input:focus,.form__select:focus,.form__textarea:focus{border-color:#C8A86B;background:#fff}
+.form__select{
+  cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23aaa' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;
+}
+.form__textarea{resize:vertical;min-height:120px}
+.form__agree{margin-bottom:28px}
+.form__agree label{display:flex;align-items:center;gap:8px;font-size:.8rem;color:#999;cursor:pointer}
+.form__agree input[type="checkbox"]{width:16px;height:16px;border:1.5px solid #ccc;border-radius:3px;cursor:pointer;flex-shrink:0;appearance:auto;-webkit-appearance:auto}
+.form__agree a{color:#C8A86B;text-decoration:underline}
+.form__submit{text-align:center}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer{background:#1c1c1c;color:rgba(255,255,255,.55)}
+.footer__main{padding:56px 0 36px}
+.footer__grid{display:grid;grid-template-columns:1fr;gap:32px}
+.footer__logo{display:flex;align-items:baseline;gap:8px;margin-bottom:12px}
+.footer__logo-mark{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff}
+.footer__logo-sub{font-size:.52rem;color:rgba(255,255,255,.35);letter-spacing:.14em}
+.footer__tagline{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.9}
+.footer__sns{display:flex;gap:12px;margin-top:16px}
+.footer__sns a{
+  width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.4);transition:all .3s;
+}
+.footer__sns a:hover{background:rgba(255,255,255,.12);color:#fff;opacity:1}
+.footer__nav h4,.footer__info h4{font-size:.65rem;color:#C8A86B;letter-spacing:.18em;margin-bottom:12px;font-weight:500}
+.footer__nav li{margin-bottom:7px}
+.footer__nav a{font-size:.76rem;color:rgba(255,255,255,.45);transition:color .3s}
+.footer__nav a:hover{color:#fff;opacity:1}
+.footer__info dt{font-size:.65rem;color:rgba(255,255,255,.3);margin-top:8px}
+.footer__info dt:first-of-type{margin-top:0}
+.footer__info dd{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.6}
+.footer__copy{padding:14px 0;border-top:1px solid rgba(255,255,255,.06);text-align:center}
+.footer__copy p{font-size:.65rem;color:rgba(255,255,255,.2);letter-spacing:.03em}
+
+@media(min-width:768px){
+  .footer__grid{grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px}
+  .footer__main{padding:72px 0 44px}
+}
+
+/* =============================================
+   BACK TO TOP
+   ============================================= */
+.totop{
+  position:fixed;bottom:20px;right:20px;z-index:900;
+  width:42px;height:42px;border-radius:50%;
+  background:#333;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.12);
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;
+}
+.totop.is-visible{opacity:.6;visibility:visible;transform:translateY(0)}
+.totop:hover{opacity:1;transform:translateY(-2px)}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media(max-width:767px){
+  .sec{padding:68px 0}
+  .sec__head{margin-bottom:36px}
+  .hero__body{padding:0 20px}
+  .act-grid{gap:10px}
+  .act-card__body p{display:none}
+}
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid #C8A86B;outline-offset:2px;
+}
