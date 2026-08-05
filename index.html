@@ -1,320 +1,736 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NPO法人ToRerun｜障がいの有無を超えて、誰もが社会とつながる力を。</title>
-  <meta name="description" content="NPO法人ToRerunは、AIと福祉の力で、障がいの有無や年齢、国籍に関わらず誰もが社会参加できる社会の実現を目指しています。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPO法人TORERUN｜障がいの有無を超えた共生社会をつくる</title>
+<meta name="description" content="NPO法人TORERUN（大阪市中央区）。障がいのある方は、脳波測定・AI生成クリエイター教育まで無料。企業様向けにAI動画制作・研修を提供し、その収益で無料支援を続けています。">
+<meta property="og:title" content="NPO法人TORERUN｜普通じゃない道を、普通に歩く。">
+<meta property="og:description" content="脳出血3回・電動車椅子の代表が、携帯1台とAIで実証する新しい働き方。AIクリエイター育成／AI同時通訳の外国人支援／脳波リハビリ研究。個人の相談は無料。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NPO法人TORERUN">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230E2233'/%3E%3Ctext x='50' y='68' font-family='serif' font-size='58' font-weight='bold' fill='%23E8A020' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0E2233">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E2233;
+  --ink-soft:#415060;
+  --paper:#FBFAF6;
+  --line:#D9D5C9;
+  --gold:#E8A020;
+  --gold-deep:#C4830F;
+  --green:#06C755;
+  --maxw:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{
+  font-family:"Zen Kaku Gothic New",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  width:100%;
+}
+.serif{font-family:"Shippori Mincho B1",serif}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,250,246,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.25rem;letter-spacing:.14em}
+.logo small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;font-size:.6rem;letter-spacing:.3em;color:var(--ink-soft)}
+nav{display:flex;gap:26px;font-size:.85rem;font-weight:500}
+nav a{position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .25s}
+nav a:hover::after,nav a:focus-visible::after{width:100%}
+.hd-cta{background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;font-size:.82rem;font-weight:700;letter-spacing:.06em;transition:background .2s}
+.hd-cta:hover{background:var(--gold-deep)}
+@media(max-width:840px){nav{display:none}}
+
+/* hero */
+.hero{position:relative;padding:88px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:64px 1fr;gap:28px}
+.tate{
+  writing-mode:vertical-rl;
+  font-family:"Shippori Mincho B1",serif;
+  font-weight:700;font-size:.95rem;letter-spacing:.42em;
+  color:var(--gold-deep);
+  border-right:2px solid var(--gold);
+  padding-right:16px;height:fit-content;
+}
+.hero h1{
+  font-family:"Shippori Mincho B1",serif;
+  font-weight:800;
+  font-size:clamp(1.9rem,4.6vw,3.4rem);
+  line-height:1.55;letter-spacing:.04em;
+}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 68%,rgba(232,160,32,.4) 68%)}
+.hero p.lead{margin-top:26px;max-width:600px;color:var(--ink-soft);font-size:1.02rem}
+.hero .mission{
+  margin-top:34px;display:inline-block;
+  border:1px solid var(--ink);padding:10px 22px;border-radius:999px;
+  font-weight:700;font-size:.92rem;letter-spacing:.12em;
+}
+@media(max-width:640px){
+  .hero{padding:60px 0 56px}
+  .hero .wrap{grid-template-columns:1fr}
+  .tate{writing-mode:horizontal-tb;border-right:none;border-bottom:2px solid var(--gold);padding:0 0 8px;letter-spacing:.3em}
+}
+
+/* stats strip */
+.stats{background:var(--ink);color:#fff;padding:38px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat b{font-family:"Shippori Mincho B1",serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--gold);display:block;line-height:1.3}
+.stat span{font-size:.78rem;letter-spacing:.1em;opacity:.85}
+@media(max-width:640px){.stats .wrap{grid-template-columns:repeat(2,1fr);gap:26px 12px}}
+
+/* section base */
+section{padding:88px 0}
+.eyebrow{
+  display:flex;align-items:center;gap:14px;
+  font-size:.78rem;font-weight:700;letter-spacing:.34em;color:var(--gold-deep);
+  margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--gold)}
+h2{
+  font-family:"Shippori Mincho B1",serif;font-weight:800;
+  font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.6;letter-spacing:.03em;
+  margin-bottom:26px;
+}
+.sec-lead{max-width:680px;color:var(--ink-soft);margin-bottom:44px}
+
+/* two pillars */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pillar{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:36px 32px;position:relative;
+}
+.pillar::before{
+  content:attr(data-jp);
+  writing-mode:vertical-rl;
+  position:absolute;top:32px;right:22px;
+  font-family:"Shippori Mincho B1",serif;font-weight:700;
+  font-size:.8rem;letter-spacing:.3em;color:var(--gold-deep);
+}
+.pillar h3{font-family:"Shippori Mincho B1",serif;font-size:1.2rem;font-weight:800;margin-bottom:14px;letter-spacing:.05em}
+.pillar p{color:var(--ink-soft);font-size:.94rem}
+.pillar ul{margin-top:16px;list-style:none}
+.pillar li{padding:7px 0 7px 22px;position:relative;font-size:.9rem;font-weight:500}
+.pillar li::before{content:"";position:absolute;left:2px;top:16px;width:9px;height:9px;background:var(--gold);border-radius:2px}
+@media(max-width:760px){.pillars{grid-template-columns:1fr}}
+
+/* creator flow */
+.flow-note{
+  background:#fff;border-left:4px solid var(--gold);
+  padding:22px 26px;margin-bottom:44px;max-width:720px;
+  font-size:.95rem;border-radius:0 10px 10px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 22px}
+.step .no{
+  font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.6rem;color:var(--gold);
+  border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:14px;display:block;
+}
+.step h4{font-size:1rem;font-weight:700;margin-bottom:8px}
+.step p{font-size:.85rem;color:var(--ink-soft);line-height:1.8}
+.flow-result{
+  margin-top:28px;text-align:center;
+  font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.15rem;letter-spacing:.06em;
+}
+.flow-result strong{color:var(--gold-deep)}
+@media(max-width:840px){.flow{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.flow{grid-template-columns:1fr}}
+
+/* corporate */
+.dark{background:var(--ink);color:#fff}
+.dark .eyebrow{color:var(--gold)}
+.dark h2{color:#fff}
+.dark .sec-lead{color:rgba(255,255,255,.75)}
+.biz{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.biz-card{border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:30px 26px}
+.biz-card h3{font-family:"Shippori Mincho B1",serif;font-size:1.05rem;font-weight:800;margin-bottom:12px;color:var(--gold)}
+.biz-card p{font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.85}
+.free-fair{
+  margin-top:36px;border:1px dashed rgba(255,255,255,.35);border-radius:12px;
+  padding:20px 26px;font-size:.92rem;text-align:center;letter-spacing:.04em;
+}
+.free-fair b{color:var(--gold)}
+@media(max-width:760px){.biz{grid-template-columns:1fr}}
+
+/* work gallery */
+.work-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.work-gallery img{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.25);display:block}
+.work-note{font-size:.8rem;color:rgba(255,255,255,.65);margin-top:12px;text-align:center;letter-spacing:.06em}
+@media(max-width:640px){.work-gallery{grid-template-columns:1fr}}
+
+/* representative */
+.rep .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.rep-side{position:sticky;top:100px}
+.rep-name{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;letter-spacing:.08em}
+.rep-title{font-size:.82rem;letter-spacing:.2em;color:var(--gold-deep);font-weight:700;margin-bottom:10px}
+.rep-facts{margin-top:22px;border-top:1px solid var(--line)}
+.rep-facts div{display:flex;justify-content:space-between;gap:14px;padding:11px 2px;border-bottom:1px solid var(--line);font-size:.86rem}
+.rep-facts dt{color:var(--ink-soft);font-weight:500;white-space:nowrap}
+.rep-facts dd{font-weight:700;text-align:right}
+.rep-body p{margin-bottom:22px;font-size:.98rem}
+.rep-body .kotoba{
+  font-family:"Shippori Mincho B1",serif;font-weight:800;
+  font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1.8;
+  padding:26px 0;margin:10px 0 26px;
+  border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
+}
+@media(max-width:840px){.rep .wrap{grid-template-columns:1fr}.rep-side{position:static}}
+
+/* price policy */
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price .step .fee{
+  font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;
+  color:var(--gold-deep);border-bottom:1px solid var(--line);
+  padding-bottom:10px;margin-bottom:14px;display:block;
+}
+@media(max-width:760px){.price{grid-template-columns:1fr}}
+
+/* event */
+.event{background:linear-gradient(180deg,var(--paper) 0%,#F3F0E6 100%)}
+.event-card{
+  border:2px solid var(--ink);border-radius:18px;background:#fff;
+  display:grid;grid-template-columns:1.5fr 1fr;overflow:hidden;
+}
+.event-main{padding:40px 38px}
+.event-main .concept{
+  font-family:"Shippori Mincho B1",serif;font-weight:800;
+  font-size:clamp(1.3rem,2.8vw,1.8rem);line-height:1.7;margin-bottom:18px;
+}
+.event-main .concept em{font-style:normal;background:linear-gradient(transparent 68%,rgba(232,160,32,.4) 68%)}
+.event-main p{font-size:.93rem;color:var(--ink-soft);margin-bottom:14px}
+.event-spec{background:var(--ink);color:#fff;padding:40px 32px;display:flex;flex-direction:column;justify-content:center}
+.event-spec div{padding:12px 2px;border-bottom:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;gap:12px;font-size:.88rem}
+.event-spec div:first-child{border-top:1px solid rgba(255,255,255,.2)}
+.event-spec span{color:rgba(255,255,255,.65)}
+.event-spec b{color:var(--gold);font-weight:700;text-align:right}
+.event-note{font-size:.76rem;color:rgba(255,255,255,.6);margin-top:16px;line-height:1.8}
+@media(max-width:760px){.event-card{grid-template-columns:1fr}}
+
+/* faq */
+.faq-list{max-width:760px}
+.faq-list details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  margin-bottom:14px;overflow:hidden;
+}
+.faq-list summary{
+  cursor:pointer;list-style:none;padding:20px 24px;
+  font-weight:700;font-size:.95rem;display:flex;gap:14px;align-items:baseline;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::before{
+  content:"Q";font-family:"Shippori Mincho B1",serif;font-weight:800;
+  color:var(--gold-deep);font-size:1.1rem;flex-shrink:0;
+}
+.faq-list details[open] summary{border-bottom:1px solid var(--line)}
+.faq-list .a{padding:18px 24px 22px;font-size:.9rem;color:var(--ink-soft);display:flex;gap:14px}
+.faq-list .a::before{
+  content:"A";font-family:"Shippori Mincho B1",serif;font-weight:800;
+  color:var(--ink);font-size:1.1rem;flex-shrink:0;
+}
+.mental{background:#fff;border-top:1px solid var(--line)}
+.mental-card{
+  display:grid;grid-template-columns:1fr 1.6fr;gap:0;
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper);
+}
+.mental-left{
+  background:var(--ink);color:#fff;padding:38px 32px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.mental-left .role{font-size:.72rem;letter-spacing:.28em;color:var(--gold);font-weight:700;margin-bottom:12px}
+.mental-left h3{font-family:"Shippori Mincho B1",serif;font-size:1.4rem;font-weight:800;letter-spacing:.08em;margin-bottom:6px}
+.mental-left .sub{font-size:.8rem;color:rgba(255,255,255,.75);line-height:1.9}
+.mental-left ul{list-style:none;margin-top:20px;border-top:1px solid rgba(255,255,255,.25)}
+.mental-left li{display:flex;justify-content:space-between;gap:12px;padding:9px 2px;border-bottom:1px solid rgba(255,255,255,.18);font-size:.8rem}
+.mental-left li span{color:rgba(255,255,255,.65)}
+.mental-left li b{color:var(--gold);font-weight:700}
+.mental-right{padding:38px 36px}
+.mental-right p{font-size:.95rem;color:var(--ink-soft);margin-bottom:18px}
+.mental-right p strong{color:var(--ink)}
+.mental-right .msg{
+  font-family:"Shippori Mincho B1",serif;font-weight:800;color:var(--ink);
+  font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.9;
+  padding-left:18px;border-left:3px solid var(--gold);margin-bottom:20px;
+}
+@media(max-width:760px){.mental-card{grid-template-columns:1fr}}
+.unya{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.media-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  padding:30px 26px;display:flex;flex-direction:column;
+}
+.media-card .tag{
+  align-self:flex-start;font-size:.7rem;font-weight:700;letter-spacing:.16em;
+  color:var(--gold-deep);border:1px solid var(--gold);border-radius:999px;
+  padding:3px 12px;margin-bottom:16px;
+}
+.media-card h3{font-family:"Shippori Mincho B1",serif;font-size:1.1rem;font-weight:800;margin-bottom:4px;letter-spacing:.04em}
+.media-card .acct{font-size:.78rem;color:var(--ink-soft);margin-bottom:16px}
+.media-card b{font-family:"Shippori Mincho B1",serif;font-size:2rem;font-weight:800;color:var(--gold-deep);display:block;line-height:1.25}
+.media-card small{font-size:.74rem;letter-spacing:.1em;color:var(--ink-soft);display:block;margin-bottom:14px}
+.media-card p{font-size:.85rem;color:var(--ink-soft);line-height:1.85;margin-top:auto}
+@media(max-width:840px){.media-grid{grid-template-columns:1fr}}
+
+/* overview + contact */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.about-table{border-top:1px solid var(--line)}
+.about-table div{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--line);padding:14px 4px;font-size:.92rem}
+.about-table dt{color:var(--ink-soft);font-weight:500}
+.about-table dd{font-weight:600}
+.contact-card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:40px 36px;text-align:center;
+}
+.contact-card h3{font-family:"Shippori Mincho B1",serif;font-size:1.25rem;font-weight:800;margin-bottom:12px}
+.contact-card p{font-size:.9rem;color:var(--ink-soft);margin-bottom:26px}
+.line-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green);color:#fff;font-weight:800;letter-spacing:.06em;
+  padding:16px 38px;border-radius:999px;font-size:1rem;
+  transition:transform .15s,box-shadow .15s;
+  box-shadow:0 6px 18px rgba(6,199,85,.3);
+}
+.line-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(6,199,85,.35)}
+.line-btn svg{width:22px;height:22px;fill:#fff}
+.contact-note{margin-top:16px;font-size:.78rem;color:var(--ink-soft)}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:34px 0;font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer b{color:#fff;font-family:"Shippori Mincho B1",serif;letter-spacing:.12em}
+
+/* philosophy */
+#philosophy h2{font-size:2.2rem;line-height:1.3}
+#philosophy .philosophy-text{border-left:4px solid var(--gold);padding-left:20px}
+
+/* promise */
+.promise-list{max-width:760px;counter-reset:pr}
+.promise-list li{
+  list-style:none;counter-increment:pr;position:relative;
+  padding:20px 0 20px 64px;border-bottom:1px solid var(--line);
+}
+.promise-list li::before{
+  content:counter(pr);position:absolute;left:8px;top:16px;
+  font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.7rem;color:var(--gold);
+}
+.promise-list b{font-size:1rem;display:block;margin-bottom:4px}
+.promise-list p{font-size:.88rem;color:var(--ink-soft)}
+
+/* news */
+.news{background:#fff;border-bottom:1px solid var(--line);padding:26px 0}
+.news .wrap{display:flex;gap:24px;align-items:baseline}
+.news-label{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:.85rem;letter-spacing:.2em;color:var(--gold-deep);white-space:nowrap}
+.news ul{list-style:none;flex:1}
+.news li{display:flex;gap:16px;padding:5px 0;font-size:.86rem;align-items:baseline}
+.news li time{color:var(--ink-soft);font-size:.78rem;white-space:nowrap}
+@media(max-width:640px){.news .wrap{flex-direction:column;gap:10px}}
+
+/* sns links */
+a.acct{font-size:.78rem;color:var(--gold-deep);margin-bottom:16px;display:inline-block;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:1px;transition:opacity .2s}
+a.acct:hover{opacity:.7}
+.foot-sns{display:flex;gap:18px;font-size:.78rem}
+.foot-sns a{color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:1px}
+.foot-sns a:hover{color:#fff}
+
+/* reveal (disabled for reliability — always visible) */
+.rv{opacity:1;transform:none;transition:none}
+.rv.on{opacity:1;transform:none}
+/* unyakorori gallery */
+.unyk-grid{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.unyk-card{position:relative;border-radius:16px;overflow:hidden;background:#111;aspect-ratio:720/916;box-shadow:0 6px 20px rgba(14,34,51,.12)}
+.unyk-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.unyk-card:hover img{transform:scale(1.04)}
+.unyk-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 12px 12px;color:#fff;font-size:.78rem;line-height:1.6;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0))}
+@media(max-width:680px){
+  .unyk-grid{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+  .unyk-grid::-webkit-scrollbar{display:none}
+  .unyk-card{flex:0 0 76%;scroll-snap-align:center}
+}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="header__inner">
-      <a href="#" class="header__logo">
-        <span class="header__logo-mark">ToRerun</span>
-        <span class="header__logo-sub">NPO法人</span>
-      </a>
-      <nav class="gnav" id="gnav">
-        <ul class="gnav__list">
-          <li><a href="#about">ToRerunとは</a></li>
-          <li><a href="#mission">使命</a></li>
-          <li><a href="#activity">活動内容</a></li>
-          <li><a href="#message">代表メッセージ</a></li>
+<header>
+  <div class="wrap hd">
+    <a href="#top" class="logo">TORERUN<small>NPO HOJIN</small></a>
+    <nav aria-label="メインメニュー">
+      <a href="#rep">代表あいさつ</a>
+      <a href="#brainwave">脳波測定</a>
+      <a href="#pricing">料金</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#about">法人概要</a>
+    </nav>
+    <a href="https://lin.ee/OxvWj57t" target="_blank" class="hd-cta">LINEで相談する</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="tate">障がいの有無を超えて</div>
+    <div>
+      <h1 class="rv">普通じゃない道を、<br><em>普通に</em>歩く。</h1>
+      <p class="lead rv">代表は、脳出血を3度経験しました。右半身は麻痺し、移動は電動車椅子。それでも今、携帯1台とAIで発信を続け、法人を経営しています。TORERUNは、この「実証」をすべての人に開くためのNPOです。</p>
+      <p class="rv" style="margin-top:16px;font-size:.95rem;color:var(--ink);font-weight:700">企業が動画を依頼することで、障害のある人の学びと挑戦を支えられる。</p>
+    </div>
+  </div>
+</div>
+
+<!-- UNYA WORK -->
+<section id="unyawork" style="padding-top:32px">
+  <div class="wrap">
+    <div class="eyebrow rv">WORK</div>
+    <h2 class="rv">今、動いている案件。</h2>
+    <p class="sec-lead rv">AIアニメ「うにゃころり」が制作中の、企業様向けPR動画の一部です。</p>
+    <div class="unyk-grid rv">
+      <figure class="unyk-card">
+        <img src="unyakorori-01.jpg" alt="AIアニメ「うにゃころり」父ねずみと子ねずみがノートパソコンを前に話す場面" loading="lazy" width="720" height="916">
+        <figcaption>父ねずみと子ねずみの対話でつくる</figcaption>
+      </figure>
+      <figure class="unyk-card">
+        <img src="unyakorori-02.jpg" alt="AIアニメ「うにゃころり」本を開いた父ねずみ" loading="lazy" width="720" height="916">
+        <figcaption>むずかしい話を、やさしい言葉で</figcaption>
+      </figure>
+      <figure class="unyk-card">
+        <img src="unyakorori-03.jpg" alt="AIアニメ「うにゃころり」驚く子ねずみ" loading="lazy" width="720" height="916">
+        <figcaption>表情も動きも、すべてAI生成</figcaption>
+      </figure>
+    </div>
+    <p class="rv" style="margin-top:18px;font-size:.85rem;color:var(--ink-soft);text-align:center">AZ8 Theater案件（シンガポール）ほか、制作実績はInstagramで公開中です。</p>
+    <div style="margin-top:16px;text-align:center">
+      <a href="https://www.instagram.com/unyakorori/" target="_blank" rel="noopener" class="rv" style="display:inline-block;padding:10px 24px;background:var(--ink);color:#fff;text-decoration:none;border-radius:8px;font-weight:bold;font-size:.85rem">Instagramで作品を見る</a>
+    </div>
+    <div style="margin-top:24px;text-align:center">
+      <a href="https://lin.ee/OxvWj57t" target="_blank" class="rv" style="display:inline-block;padding:14px 32px;background:var(--gold);color:#fff;text-decoration:none;border-radius:8px;font-weight:bold">お仕事のご依頼はこちら（LINE）</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL STATS -->
+<div style="background:var(--paper);padding:32px 0;border-bottom:1px solid var(--line);width:100%;overflow:hidden">
+  <div class="wrap" style="display:flex;justify-content:center;gap:56px;text-align:center;flex-wrap:wrap;max-width:100%">
+    <a href="https://www.tiktok.com/@netern3317" target="_blank" class="rv" style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--ink)"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+      <div style="font-size:1.8rem;font-weight:bold;color:var(--gold)">3,152</div>
+      <div style="font-size:.85rem;color:var(--ink-soft)">TikTok<br><span style="font-size:.75rem">法人アカウント</span></div>
+      <span style="margin-top:4px;font-size:.75rem;font-weight:bold;color:#fff;background:var(--ink);padding:6px 16px;border-radius:999px">フォローする</span>
+    </a>
+    <a href="https://www.instagram.com/bushi.ne/" target="_blank" class="rv" style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="var(--ink)"/></svg>
+      <div style="font-size:1.8rem;font-weight:bold;color:var(--gold)">2,378</div>
+      <div style="font-size:.85rem;color:var(--ink-soft)">Instagram<br><span style="font-size:.75rem">法人アカウント</span></div>
+      <span style="margin-top:4px;font-size:.75rem;font-weight:bold;color:#fff;background:var(--ink);padding:6px 16px;border-radius:999px">フォローする</span>
+    </a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat rv"><b>1台</b><span>仕事道具は携帯だけ</span></div>
+    <div class="stat rv"><b>17.2万</b><span>「うにゃころり」フォロワー</span></div>
+    <div class="stat rv"><b>無料</b><span>相談・体験はいつでも</span></div>
+  </div>
+</div>
+
+<!-- NEWS -->
+<div class="news">
+  <div class="wrap">
+    <span class="news-label">お知らせ</span>
+    <ul>
+      <li><time>2026.08</time><span>AIアニメ「うにゃころり」で、消費税をテーマにした全5話の解説シリーズの制作を進めています</span></li>
+      <li><time>2026.07</time><span>3D生成AIサービス「Meshy」とのタイアップ動画を「うにゃころり」で公開しました</span></li>
+      <li><time>2026.07</time><span>AIアニメ「うにゃころり」が、シンガポールのAIストーリーブランド「AZ8 Theater」のコンテストに選出され、動画制作の依頼を受けました</span></li>
+      <li><time>2026.07</time><span>予測市場サービス向けに、たこ焼きキャラクターを使ったAI生成コンテンツシリーズの制作を進行中です</span></li>
+      <li><time>2026.07</time><span>公式ホームページを公開しました</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- REPRESENTATIVE -->
+<section id="rep" class="rep">
+  <div class="wrap">
+    <div class="rep-side rv">
+      <div class="rep-title">代表あいさつ</div>
+      <div class="rep-name serif">代表理事</div>
+      <p style="font-size:.85rem;color:var(--ink-soft);margin-top:6px">NPO法人TORERUN</p>
+      <dl class="rep-facts">
+        <div><dt>経歴</dt><dd>経営コンサルタント 15年</dd></div>
+        <div><dt>39歳</dt><dd>脳幹出血（1回目）</dd></div>
+        <div><dt>50歳</dt><dd>脳幹出血（2回目）</dd></div>
+        <div><dt>54歳</dt><dd>脳出血・手術（3回目）</dd></div>
+        <div><dt>現在</dt><dd>身体障害者手帳1級・右半身麻痺・電動車椅子</dd></div>
+      </dl>
+    </div>
+    <div class="rep-body">
+      <p class="rv">私は脳出血を3度経験し、右半身の自由を失いました。移動は電動車椅子です。リハビリは6年間、大阪城で続けています。まだ歩けてはいません。それでも、歩こうとする努力を続けています。</p>
+      <p class="kotoba rv">障がいは、時代の最先端を<br>諦める理由にはなりません。</p>
+      <p class="rv">私は左手一本と携帯1台で、AIを使って発信し、この法人を経営しています。特別な才能ではありません。AIが「自動でできること」を増やしてくれた時代だからこそ、できたことです。AI・DXを活用し、一人ひとりに最適な支援を実現する——これがTORERUNのミッション、障がいの有無を超えた共生社会をつくることにつながっています。</p>
+      <div style="margin-top:24px;padding:24px;background:rgba(0,0,0,.02);border-radius:12px;text-align:center">
+        <p class="rv" style="font-size:.9rem;color:var(--ink-soft);margin-bottom:20px">6年間のリハビリ記録（bushi.ne / Instagram）</p>
+        <a href="https://www.instagram.com/p/C8gC7-aS7Qa/" target="_blank" class="rv" style="display:inline-block;padding:12px 24px;background:var(--gold);color:white;text-decoration:none;border-radius:8px;font-weight:bold">Instagramで見る</a>
+      </div>
+      <div style="margin-top:20px;text-align:right">
+        <p class="rv" style="font-size:.72rem;color:var(--ink-soft);margin:0">代表者：植原武志　／　大阪市中央区東高麗橋</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI REHAB -->
+<section id="airehab">
+  <div class="wrap">
+    <div class="eyebrow rv">AI × REHABILITATION</div>
+    <h2 class="rv">AIで、リハビリを進める。</h2>
+    <p class="sec-lead rv">代表は身体障害者手帳1級。普通なら動かせない右半身の麻痺です。だからこそ、最新のAIリハビリツールを自ら試し、本当に良いものだけを紹介します。</p>
+    <div class="flow-note rv" style="margin-top:20px;margin-bottom:0;max-width:none">
+      <strong>正直にお伝えします。</strong>TORERUNは機材の販売や仲介は行いません。代表自身が使ってみた実感を、良いことも足りないことも、そのままお伝えします。麻痺の重さによって合う・合わないは人それぞれです。試す前の判断材料として、ご覧ください。
+    </div>
+  </div>
+</section>
+
+<!-- AI AD -->
+<section class="unya" id="ai-ad">
+  <div class="wrap">
+    <div class="eyebrow rv">AI × AD</div>
+    <h2 class="rv">AI生成アニメで、広がる仕事。</h2>
+    <p class="sec-lead rv">実績はまだ1年。それでも、AI生成アニメ「うにゃころり」は企業様の広告に取り入れられ、海外からの制作依頼を受けるまでになりました。</p>
+    <div class="media-grid">
+      <div class="media-card rv">
+        <span class="tag">AIアニメ</span>
+        <h3>うにゃころり</h3>
+        <a class="acct" href="https://www.instagram.com/unyakorori/" target="_blank" rel="noopener">Instagram @unyakorori ↗</a>
+        <b>17.2万人</b>
+        <small>フォロワー</small>
+        <p>親子のねずみが、政治・経済・お金のしくみを5歳にもわかる言葉で解きほぐすAI生成アニメ。シンガポールのAIストーリーブランド「AZ8 Theater」のコンテストに選出され、動画制作の依頼を受けるなど、海外案件も進行中——AIアニメは、もう国境を越えています。</p>
+      </div>
+    </div>
+    <div style="margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15)">
+      <h3 class="rv" style="color:#fff;font-size:1.05rem;margin-bottom:20px">企業様にご依頼いただけること</h3>
+      <div class="biz">
+        <div class="biz-card rv">
+          <h3>AI生成アニメ制作</h3>
+          <p>PR動画・広告動画・解説動画を、AI生成アニメで企画から制作までお引き受けします。</p>
+        </div>
+        <div class="biz-card rv">
+          <h3>AI活用研修</h3>
+          <p>脳出血3回・左手一本でAIを使いこなす代表が、実話をもとに研修・講演を行います。</p>
+        </div>
+      </div>
+      <p class="rv" style="margin-top:20px;font-size:.85rem;color:rgba(255,255,255,.7)">料金・納期などの詳細は、LINEでご相談ください。ご依頼いただいた収益は、障がいのある方への無料支援の運営費として活用させていただきます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- BRAINWAVE RESEARCH -->
+<section id="brainwave">
+  <div class="wrap">
+    <div class="eyebrow rv">MEASUREMENT</div>
+    <h2 class="rv">脳波測定という、新しい手がかり。</h2>
+    <p class="sec-lead rv">障がいのある方は、脳波測定を無料で体験できます。診断や治療ではなく、「気合」や「根性」だけに頼らない、リハビリを考えるための一つの手がかりです。</p>
+    <div class="pillars">
+      <div class="pillar rv" data-jp="リハビリの未来">
+        <h3>脳波リハビリ（BCI）</h3>
+        <p>麻痺した手を「動かそう」と想像すると、体が動かなくても脳は指令を出しています。脳波がその指令を捉えた瞬間に機械が手を動かす——脳は「動いた」という成功体験を取り戻し、新しい回路を育て始めます。</p>
+        <ul>
+          <li>重度の麻痺でも「想像する力」でリハビリできる可能性</li>
+          <li>国内の大学・研究機関で臨床研究が進む分野</li>
+          <li>代表自身が6年のリハビリ当事者として研究を追う</li>
         </ul>
-        <div class="gnav__btns">
-          <a href="#contact" class="gnav__btn gnav__btn--contact">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-            お問い合わせ
-          </a>
-        </div>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__img">
-      <img src="images/hero.jpg" alt="障がいの有無を超えて、誰もが社会とつながる力を。AIと福祉の力で、誰もが自分らしく参加できる社会へ。">
-    </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__script">ToRerun</div>
-    <div class="hero__scroll"><span>Scroll</span><i></i></div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="sec" id="about">
-    <div class="container">
-      <div class="about">
-        <div class="about__deco">About us</div>
-        <p class="about__en">ABOUT US</p>
-        <h2 class="about__heading">
-          障がいの有無や年齢、国籍を超え、<br>
-          誰もが社会参加できる<br>
-          未来を創ります。
-        </h2>
-        <div class="about__text">
-          <p>NPO法人ToRerunは、<br>障がいの有無や年齢、国籍、家庭環境に関わらず、<br>誰もが社会参加できる社会の実現を目指しています。</p>
-          <p>AI教育・デジタル活用支援と、生活・健康支援を通じて、<br>一人ひとりが自分らしく生きられる未来を創ります。</p>
-        </div>
+      </div>
+      <div class="pillar rv" data-jp="見た事がない体験">
+        <h3>脳波 × 野球——味わったことのないテスト</h3>
+        <p>脳の仕組みを、頭で理解するのではなく体感する。それも、メジャーリーグまで行った選手の脳波を通じて。</p>
+        <ul>
+          <li>一流選手が勝負の一瞬前に入る「静かな集中状態」を、脳波で見える化</li>
+          <li>元メジャーリーガー・野村貴仁氏とZoomで直接指導</li>
+          <li>見たことのない体験を、自宅から味わえます</li>
+        </ul>
       </div>
     </div>
-  </section>
+    <div style="margin-top:44px;padding-top:28px;border-top:1px solid var(--line)">
+      <h3 class="rv" style="font-size:1.1rem;margin-bottom:12px">野村 貴仁（元プロ野球投手・元メジャーリーガー）</h3>
+      <p class="rv" style="font-size:.9rem;line-height:1.8">オリックスの日本一メンバーとして、日本シリーズで松井秀喜を無失点に抑えた左腕。日本・アメリカ・台湾の3か国で投げ、世界の頂点に近い場所を見た人です。どん底も知る人だからこそ、届く言葉があります。</p>
+      <p class="rv" style="margin-top:16px;font-size:.95rem;line-height:1.8"><strong>参加形式：</strong>Zoomで、ご自宅から参加できます。脳波センサーを使い、一流選手のメンタルを体感で学びます。治療ではなくトレーニングなので、どなたでも安心して始められます。</p>
+    </div>
+    <div class="flow-note rv" style="margin-top:28px;margin-bottom:0;max-width:none">
+      <strong>正直にお伝えします。</strong>BCIリハビリは現在、大学や研究機関での研究・臨床試験の段階にあり、どこでも受けられる標準治療ではありません。診断や治療の効果を保証するものではなく、「想像する力を試してみる」体験としてご提供します。脳波測定機材は、導入の準備を進めています（体制が整い次第あらためてお知らせします）。測定で得たデータは本人の同意のもとでのみ記録し、目的外に利用しません。
+    </div>
+  </div>
+</section>
 
-  <!-- POINTS -->
-  <section class="sec sec--nopad-top" id="pillars">
-    <div class="container">
-      <div class="points">
-        <div class="point fade-up">
-          <div class="point__head">
-            <span class="point__label">POINT</span>
-            <span class="point__num">01</span>
-          </div>
-          <div class="point__icon">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&q=80" alt="AI教育">
-          </div>
-          <p class="point__title">AI教育・デジタル活用支援で<br>情報格差をなくす</p>
-        </div>
-        <div class="point fade-up delay-1">
-          <div class="point__head">
-            <span class="point__label">POINT</span>
-            <span class="point__num">02</span>
-          </div>
-          <div class="point__icon">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&q=80" alt="生活・健康支援">
-          </div>
-          <p class="point__title">生活・健康支援で<br>一人ひとりに寄り添う</p>
-        </div>
-        <div class="point fade-up delay-2">
-          <div class="point__head">
-            <span class="point__label">POINT</span>
-            <span class="point__num">03</span>
-          </div>
-          <div class="point__icon">
-            <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=300&q=80" alt="共生社会">
-          </div>
-          <p class="point__title">障がいの有無を超えた<br>共生社会をつくる</p>
-        </div>
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow rv">PRICING</div>
+    <h2 class="rv">わたしたちの支援について。</h2>
+    <p class="sec-lead rv">障がいのある方は、無料でご利用いただけます。ご家族・関係者の方が同伴・参加される場合は、参加費をいただいています。</p>
+    <div class="pillars">
+      <div class="pillar rv" data-jp="ご本人">
+        <h3>障がいのある方</h3>
+        <p style="font-size:1.6rem;color:var(--gold);font-weight:bold;margin:12px 0">無料</p>
+        <ul>
+          <li>オンライン相談（Zoom）</li>
+          <li>脳波測定</li>
+          <li>AI生成クリエイター教育</li>
+          <li>脳波×スポーツ（野村さんとのZoom）</li>
+        </ul>
       </div>
-      <div class="sec__cta">
-        <a href="#activity" class="c-btn">活動内容の詳細<span class="c-btn__arrow"></span></a>
+      <div class="pillar rv" data-jp="ご家族・関係者">
+        <h3>ご家族・関係者の方</h3>
+        <p style="font-size:1.6rem;color:var(--gold);font-weight:bold;margin:12px 0">参加費 3,000円</p>
+        <ul>
+          <li>脳波測定・脳波×スポーツへの同伴・参加</li>
+          <li>運営費として活用させていただきます</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MISSION / VISION / VALUE -->
-  <section class="sec" id="mission">
-    <div class="container">
-      <div class="philosophy">
-        <div class="philosophy__deco">Mission</div>
-        <div class="philosophy__head fade-up">
-          <p class="sec__en">PHILOSOPHY</p>
-          <h2 class="sec__title">究極の理念</h2>
-          <p class="philosophy__catch">「障害の痛み」とは、「心の痛み」である。<br>私たちは、そのすべての痛みを取り除く（ToRerun）。</p>
-        </div>
 
-        <div class="philosophy__grid">
-          <div class="phil-card phil-card--mission fade-up">
-            <span class="phil-card__en">MISSION</span>
-            <h3 class="phil-card__title">果たすべき使命</h3>
-            <p class="phil-card__lead">「障害の痛み」とは、「心の痛み」である。</p>
-            <p class="phil-card__body">私たちは、そのすべての痛みを取り除く（ToRerun）。目に見えない困難に寄り添い、一人ひとりが自分らしく生きられる社会を創る。</p>
-          </div>
 
-          <div class="phil-card phil-card--vision fade-up delay-1">
-            <span class="phil-card__en">VISION</span>
-            <h3 class="phil-card__title">目指す未来</h3>
-            <p class="phil-card__lead">生きづらさを抱えるひとが、<br>AIの力とクリエイティブで自立する。</p>
-            <p class="phil-card__body">孤独からも、理不尽からも、完全に解放される社会を創る。テクノロジーと創造性が、誰もを支える未来へ。</p>
-          </div>
-
-          <div class="phil-card phil-card--value fade-up delay-2">
-            <span class="phil-card__en">VALUE</span>
-            <h3 class="phil-card__title">日々の行動指針</h3>
-            <p class="phil-card__lead">「痛みに寄り添う」</p>
-            <p class="phil-card__body">目に見えない「心の痛み」に、誰よりも深く共感する。言葉にならない想いにも、常に真摯に向き合う。</p>
-          </div>
-        </div>
-      </div>
+<!-- FOREIGN RESIDENTS -->
+<section id="global">
+  <div class="wrap">
+    <div class="eyebrow rv">FOR FOREIGN RESIDENTS</div>
+    <h2 class="rv">言葉の壁は、AIが消した。<br>日本で働くことを、母語のまま。</h2>
+    <p class="sec-lead rv">AIの同時通訳を使えば、日本語が話せなくても、あなたの母語のまま相談できます。相談はすべて無料です。<span style="font-size:.82rem;color:var(--ink-soft);display:block;margin-top:8px">Free consultation for foreigners in Japan, in your own language — powered by AI interpretation.</span></p>
+    <div class="pillar rv" data-jp="はたらく">
+      <h3>働く支援</h3>
+      <p>日本で働きたい。その一歩も、母語のまま相談できます。</p>
+      <ul>
+        <li>日本での働き方・仕事のはじめ方の相談（無料）</li>
+        <li>AIクリエイター訓練への参加——携帯1台、AI通訳があれば日本語が完璧でなくても学べます</li>
+        <li>履歴書や仕事のやり取りの日本語を、AIで一緒に整えるサポート</li>
+      </ul>
     </div>
-  </section>
+    <div class="flow-note rv" style="margin-top:28px;margin-bottom:0;max-width:none">
+      <strong>TORERUNが組む専門家は、同じ「当事者」です。</strong>障がいと共に働く人、壁を越えてきた人——あなたの不安がわかる人と、一緒に進めます。まずはLINEで、母語のまま送ってください。
+    </div>
+  </div>
+</section>
 
-  <!-- ACTIVITY -->
-  <section class="sec sec--cream" id="activity">
-    <div class="container">
-      <div class="sec__head">
-        <p class="sec__en">ACTIVITY</p>
-        <h2 class="sec__title">活動内容</h2>
-      </div>
-      <div class="act-grid">
-        <a href="#" class="act-card fade-up">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="AI教育支援"></div>
-          <div class="act-card__body"><h3>AI教育支援</h3><p>AIリテラシーの向上を支援し、誰もがデジタル社会に参加できる力を育みます。</p></div>
+<!-- PROMISE -->
+<section id="promise" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="eyebrow rv">PROMISE</div>
+    <h2 class="rv">支援には、限界がある。<br>だから、この5つを約束する。</h2>
+    <p class="sec-lead rv">私自身が障害者です。人の手による支援には、どうしても限界があります。できないことを隠さず、できることを増やす——そのために、TORERUNは自分たちにルールを課しています。</p>
+    <ol class="promise-list">
+      <li class="rv"><b>誇張しない。嘘をつかない。</b><p>できないことは「できない」と言います。実績も数字も、盛らずにそのまま。</p></li>
+      <li class="rv"><b>一歩ずつ、あなたのペースで。</b><p>一度にたくさん求めません。1段階ずつ、あなたの確認を待って進みます。</p></li>
+      <li class="rv"><b>お金に誠実。</b><p>料金は先に、はっきり示します。あなたが稼いだ報酬から、私たちが取ることはありません。</p></li>
+      <li class="rv"><b>福祉の枠に、閉じ込めない。</b><p>就労継続支援（A型・B型）は行いません。あなたを「普通の人」として扱います。</p></li>
+      <li class="rv"><b>「治る」と安易に言わない。</b><p>希望は語ります。しかし根拠のない約束はしません。事実だけを、まっすぐに。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow rv">FAQ</div>
+    <h2 class="rv">よくある質問</h2>
+    <div class="faq-list">
+      <details class="rv">
+        <summary>お金はかかりますか？</summary>
+        <div class="a">障がいのある方は、脳波測定・AI生成クリエイター教育・脳波×スポーツ（野村さんとのZoom）まで、すべて無料です。ご家族・関係者の方が同伴・参加される場合は、参加費3,000円をいただいています。</div>
+      </details>
+      <details class="rv">
+        <summary>就労継続支援（A型・B型）の事業所ですか？</summary>
+        <div class="a">いいえ。TORERUNはA型もB型も行いません。福祉の枠の中の「工賃」ではなく、市場で通用する普通の報酬を目指します。比べる相手は福祉事業所ではなく、プロの制作会社やフリーランスです。</div>
+      </details>
+      <details class="rv">
+        <summary>障がいが重く、細かい操作ができません。それでもできますか？</summary>
+        <div class="a">できます。TORERUNの仕組みは「操作を覚える」のではなく「AIが自動で作る流れに乗る」設計です。あなたの役割は話すこと、選ぶこと。それも難しければスタッフが聞き取って代わりに進めます。それでも完成した作品はあなたの実績、報酬はあなたのものです。</div>
+      </details>
+      <details class="rv">
+        <summary>家から出られません。参加できますか？</summary>
+        <div class="a">参加できます。仕事道具は携帯1台。自宅から、ベッドの上からでも、制作も打ち合わせも完結します。代表自身が電動車椅子での生活の中で、この働き方を実証しています。</div>
+      </details>
+      <details class="rv">
+        <summary>パソコンを持っていません。</summary>
+        <div class="a">必要ありません。スマートフォン1台あれば十分です。ホームページ制作もSNS画像も動画も、すべて携帯だけで作れる時代になりました。それを証明するのがTORERUNの仕事です。</div>
+      </details>
+      <details class="rv">
+        <summary>アプリのダウンロードは必要ですか？</summary>
+        <div class="a">必要ありません。TORERUNのサービスは、すべてこのホームページとLINEだけで完結します。新しいアプリを覚える負担は、つくりません。よく使う方は、携帯のブラウザから「ホーム画面に追加」をすれば、アプリのようにワンタップで開けます。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + CONTACT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow rv">ABOUT</div>
+      <h2 class="rv">法人概要</h2>
+      <dl class="about-table rv">
+        <div><dt>法人名</dt><dd>特定非営利活動法人（NPO法人）TORERUN</dd></div>
+        <div><dt>設立</dt><dd>2026年（令和8年）5月1日</dd></div>
+        <div><dt>所在地</dt><dd>大阪市中央区東高麗橋</dd></div>
+        <div><dt>事業内容</dt><dd>AI教育・デジタル活用支援／生活・健康支援／AIリハビリ・介護ロボット研究／障がい者の仕事づくり</dd></div>
+        <div><dt>運営方針</dt><dd>障がいのある方への支援（脳波測定・AI生成クリエイター教育など）は無料。企業様向けAI動画制作・研修の収益で、無料支援を維持しています</dd></div>
+      </dl>
+    </div>
+    <div id="contact">
+      <div class="contact-card rv">
+        <h3>お問い合わせはLINEで</h3>
+        <p>講座への参加、企業からのご依頼・ご相談は、すべてLINE公式アカウントで受け付けています。左手一本でも、寝たままでも、送れる窓口にしました。アプリのダウンロードは不要です。</p>
+        <a class="line-btn" href="https://lin.ee/OxvWj57t" target="_blank" aria-label="LINE公式アカウントで問い合わせる">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.66 2 10.17c0 4.03 3.57 7.4 8.4 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.87c-.04.26-.2 1.02.89.56 1.09-.47 5.87-3.46 8.01-5.92C21.66 13.5 22 11.9 22 10.17 22 5.66 17.52 2 12 2z"/></svg>
+          LINEで問い合わせる
         </a>
-        <a href="#" class="act-card fade-up delay-05">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" alt="生成AI講座"></div>
-          <div class="act-card__body"><h3>生成AI講座</h3><p>ChatGPTなどの生成AIツールの実践的な活用方法を学べる講座を提供します。</p></div>
-        </a>
-        <a href="#" class="act-card fade-up delay-1">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="SNS活用支援"></div>
-          <div class="act-card__body"><h3>SNS活用支援</h3><p>SNSを安全かつ効果的に活用するスキルを身につけるための支援を行います。</p></div>
-        </a>
-        <a href="#" class="act-card fade-up delay-15">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="デジタル活用支援"></div>
-          <div class="act-card__body"><h3>デジタル活用支援</h3><p>日常で役立つデジタルスキルの習得をサポートし、情報格差の解消を目指します。</p></div>
-        </a>
-        <a href="#" class="act-card fade-up">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80" alt="生活相談"></div>
-          <div class="act-card__body"><h3>生活相談</h3><p>生活に関する悩みや困りごとに寄り添い、適切な支援につなげます。</p></div>
-        </a>
-        <a href="#" class="act-card fade-up delay-05">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="健康支援"></div>
-          <div class="act-card__body"><h3>健康支援</h3><p>心身の健康維持・増進のための情報提供やプログラムを実施します。</p></div>
-        </a>
-        <a href="#" class="act-card fade-up delay-1">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="交流イベント"></div>
-          <div class="act-card__body"><h3>交流イベント</h3><p>障がいの有無を超えた交流の場を創出し、共生社会の実現を目指します。</p></div>
-        </a>
-        <a href="#" class="act-card fade-up delay-15">
-          <div class="act-card__img"><img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="地域活動"></div>
-          <div class="act-card__body"><h3>地域活動</h3><p>地域の方々と連携した活動を通じて、コミュニティの絆を深めます。</p></div>
-        </a>
+        <p class="contact-note">※お電話での受付は行っておりません</p>
       </div>
+      <details style="margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 20px">
+        <summary style="cursor:pointer;padding:16px 0;font-weight:700;font-size:.88rem;list-style:none">プライバシーポリシー</summary>
+        <div style="padding:0 0 18px;font-size:.82rem;color:var(--ink-soft);line-height:1.9">
+          NPO法人TORERUNは、LINE公式アカウント等を通じてお預かりした氏名・連絡先などの個人情報を、お問い合わせへの回答、講座・イベントのご案内、および業務上必要な連絡のためにのみ利用します。ご本人の同意なく第三者に提供することはありません（法令に基づく場合を除く）。個人情報の訂正・削除のご希望は、LINE公式アカウントまでご連絡ください。
+        </div>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MESSAGE -->
-  <section class="sec" id="message">
-    <div class="container">
-      <div class="sec__head">
-        <p class="sec__en">MESSAGE</p>
-        <h2 class="sec__title">代表メッセージ</h2>
-      </div>
-      <div class="msg">
-        <div class="msg__photo">
-          <img src="images/representative.jpg" alt="代表理事 植原武志">
-          <div class="msg__name">
-            <span class="msg__role">代表理事</span>
-            <span class="msg__nm">植原 武志</span>
-          </div>
-        </div>
-        <div class="msg__content">
-          <p class="msg__lead">「誰もが自分らしく生きられる社会をつくりたい」——<br>その想いが、ToRerunの原点です。</p>
-          <p>私自身、福祉の現場で多くの方々と出会う中で、社会参加の機会が限られてしまう現実を目の当たりにしてきました。障がいがあっても、年齢を重ねても、どんな環境で育っても、一人ひとりには可能性があり、社会とつながる力がある。</p>
-          <p>AIやデジタル技術が急速に進化する今、テクノロジーの力を活用することで、これまで難しかった社会参加の形を実現できると確信しています。福祉の温かさとテクノロジーの可能性を掛け合わせ、新しい共生社会の姿を一緒に創っていきたい。</p>
-          <p>皆さまのご支援・ご参加を、心よりお待ちしております。</p>
-        </div>
-      </div>
-    </div>
-  </section>
+</main>
 
-  <!-- CONTACT -->
-  <section class="sec" id="contact">
-    <div class="container container--sm">
-      <div class="sec__head">
-        <p class="sec__en">CONTACT</p>
-        <h2 class="sec__title">お問い合わせ</h2>
-        <p class="sec__lead">企業・自治体・学校・個人の方からのお問い合わせを受け付けております。</p>
-      </div>
-      <form class="form" id="contactForm">
-        <div class="form__row">
-          <label class="form__label">氏名<span class="form__req">必須</span></label>
-          <input type="text" class="form__input" placeholder="山田 太郎" required>
-        </div>
-        <div class="form__row">
-          <label class="form__label">メールアドレス<span class="form__req">必須</span></label>
-          <input type="email" class="form__input" placeholder="example@email.com" required>
-        </div>
-        <div class="form__row">
-          <label class="form__label">電話番号</label>
-          <input type="tel" class="form__input" placeholder="090-1234-5678">
-        </div>
-        <div class="form__row">
-          <label class="form__label">お問い合わせ種別<span class="form__req">必須</span></label>
-          <select class="form__select" required>
-            <option value="" disabled selected>選択してください</option>
-            <option>企業連携について</option>
-            <option>自治体連携について</option>
-            <option>ボランティア参加について</option>
-            <option>寄付について</option>
-            <option>講座・イベントについて</option>
-            <option>取材・メディアについて</option>
-            <option>その他</option>
-          </select>
-        </div>
-        <div class="form__row">
-          <label class="form__label">お問い合わせ内容<span class="form__req">必須</span></label>
-          <textarea class="form__textarea" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
-        </div>
-        <div class="form__agree">
-          <label><input type="checkbox" required><span><a href="#">プライバシーポリシー</a>に同意する</span></label>
-        </div>
-        <div class="form__submit">
-          <button type="submit" class="c-btn c-btn--fill c-btn--lg">送信する<span class="c-btn__arrow"></span></button>
-        </div>
-      </form>
-    </div>
-  </section>
+<footer>
+  <div class="wrap">
+    <b>NPO法人 TORERUN</b>
+    <span>障がいの有無を超えた共生社会をつくる｜大阪市中央区東高麗橋</span>
+    <span class="foot-sns"><a href="https://www.instagram.com/unyakorori/" target="_blank" rel="noopener">うにゃころり</a><a href="https://www.instagram.com/bushi.ne/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@netern3317" target="_blank" rel="noopener">TikTok</a></span>
+    <span>&copy; 2026 NPO TORERUN</span>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__main">
-      <div class="container">
-        <div class="footer__grid">
-          <div class="footer__brand">
-            <a href="#" class="footer__logo">
-              <span class="footer__logo-mark">ToRerun</span>
-              <span class="footer__logo-sub">NPO法人</span>
-            </a>
-            <p class="footer__tagline">障がいの有無を超えて、<br>誰もが社会とつながる力を。</p>
-            <div class="footer__sns">
-              <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-              <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-              <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-              <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-            </div>
-          </div>
-          <div class="footer__nav">
-            <h4>サイトマップ</h4>
-            <ul>
-              <li><a href="#about">ToRerunとは</a></li>
-              <li><a href="#mission">私たちの使命</a></li>
-              <li><a href="#pillars">3つの活動</a></li>
-              <li><a href="#activity">活動内容</a></li>
-              <li><a href="#message">代表メッセージ</a></li>
-            </ul>
-          </div>
-          <div class="footer__nav">
-            <h4>サポート</h4>
-            <ul>
-              <li><a href="#contact">お問い合わせ</a></li>
-              <li><a href="#">定款</a></li>
-              <li><a href="#">プライバシーポリシー</a></li>
-            </ul>
-          </div>
-          <div class="footer__info">
-            <h4>法人情報</h4>
-            <dl>
-              <dt>所在地</dt><dd>〒000-0000<br>住所をここに記載</dd>
-              <dt>電話番号</dt><dd>00-0000-0000</dd>
-              <dt>メール</dt><dd>info@torerun.org</dd>
-            </dl>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__copy"><div class="container"><p>&copy; 2025 NPO法人ToRerun. All Rights Reserved.</p></div></div>
-  </footer>
-
-  <a href="#hero" class="totop" id="backToTop" aria-label="トップへ"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2L2 9h10L7 2z" fill="currentColor"/></svg></a>
-
-  <script src="js/main.js"></script>
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
