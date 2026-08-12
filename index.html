@@ -357,8 +357,8 @@ a.acct:hover{opacity:.7}
 /* unyakorori gallery */
 .unyk-grid{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .unyk-card{position:relative;border-radius:16px;overflow:hidden;background:#111;aspect-ratio:720/916;box-shadow:0 6px 20px rgba(14,34,51,.12)}
-.unyk-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.unyk-card:hover img{transform:scale(1.04)}
+.unyk-card img,.unyk-card video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;background:#111}
+.unyk-card:hover img,.unyk-card:hover video{transform:scale(1.04)}
 .unyk-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 12px 12px;color:#fff;font-size:.78rem;line-height:1.6;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0))}
 @media(max-width:680px){
   .unyk-grid{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
@@ -406,15 +406,21 @@ a.acct:hover{opacity:.7}
     <p class="sec-lead rv">AIアニメ「うにゃころり」が制作中の、企業様向けPR動画の一部です。</p>
     <div class="unyk-grid rv">
       <figure class="unyk-card">
-        <img src="unyakorori-01.jpg" alt="AIアニメ「うにゃころり」父ねずみと子ねずみがノートパソコンを前に話す場面" loading="lazy" width="720" height="916">
+        <video poster="unyakorori-01.jpg" autoplay muted loop playsinline preload="metadata" width="720" height="916" aria-label="AIアニメ「うにゃころり」父ねずみと子ねずみが話す場面">
+          <source src="unyakorori-01.mp4" type="video/mp4">
+        </video>
         <figcaption>父ねずみと子ねずみの対話でつくる</figcaption>
       </figure>
       <figure class="unyk-card">
-        <img src="unyakorori-02.jpg" alt="AIアニメ「うにゃころり」本を開いた父ねずみ" loading="lazy" width="720" height="916">
+        <video poster="unyakorori-02.jpg" autoplay muted loop playsinline preload="metadata" width="720" height="916" aria-label="AIアニメ「うにゃころり」本を開いた父ねずみ">
+          <source src="unyakorori-02.mp4" type="video/mp4">
+        </video>
         <figcaption>むずかしい話を、やさしい言葉で</figcaption>
       </figure>
       <figure class="unyk-card">
-        <img src="unyakorori-03.jpg" alt="AIアニメ「うにゃころり」驚く子ねずみ" loading="lazy" width="720" height="916">
+        <video poster="unyakorori-03.jpg" autoplay muted loop playsinline preload="metadata" width="720" height="916" aria-label="AIアニメ「うにゃころり」驚く子ねずみ">
+          <source src="unyakorori-03.mp4" type="video/mp4">
+        </video>
         <figcaption>表情も動きも、すべてAI生成</figcaption>
       </figure>
     </div>
@@ -433,17 +439,18 @@ a.acct:hover{opacity:.7}
   <div class="wrap" style="display:flex;justify-content:center;gap:56px;text-align:center;flex-wrap:wrap;max-width:100%">
     <a href="https://www.tiktok.com/@netern3317" target="_blank" class="rv" style="display:flex;flex-direction:column;align-items:center;gap:8px">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--ink)"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
-      <div style="font-size:1.8rem;font-weight:bold;color:var(--gold)">3,152</div>
-      <div style="font-size:.85rem;color:var(--ink-soft)">TikTok<br><span style="font-size:.75rem">法人アカウント</span></div>
+      <div style="font-size:1.8rem;font-weight:bold;color:var(--gold)">3,315</div>
+      <div style="font-size:.85rem;color:var(--ink-soft)">TikTok<br><span style="font-size:.75rem">代表アカウント</span></div>
       <span style="margin-top:4px;font-size:.75rem;font-weight:bold;color:#fff;background:var(--ink);padding:6px 16px;border-radius:999px">フォローする</span>
     </a>
     <a href="https://www.instagram.com/bushi.ne/" target="_blank" class="rv" style="display:flex;flex-direction:column;align-items:center;gap:8px">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="var(--ink)"/></svg>
-      <div style="font-size:1.8rem;font-weight:bold;color:var(--gold)">2,378</div>
-      <div style="font-size:.85rem;color:var(--ink-soft)">Instagram<br><span style="font-size:.75rem">法人アカウント</span></div>
+      <div style="font-size:1.8rem;font-weight:bold;color:var(--gold)">2,612</div>
+      <div style="font-size:.85rem;color:var(--ink-soft)">Instagram<br><span style="font-size:.75rem">代表アカウント</span></div>
       <span style="margin-top:4px;font-size:.75rem;font-weight:bold;color:#fff;background:var(--ink);padding:6px 16px;border-radius:999px">フォローする</span>
     </a>
   </div>
+  <p class="rv" style="margin:20px auto 0;text-align:center;font-size:.85rem;color:var(--ink-soft)">代表アカウントは直近30日間で <b style="color:var(--gold)">80.2万回</b> 表示されました（Instagram）</p>
 </div>
 
 <!-- STATS -->
@@ -460,12 +467,17 @@ a.acct:hover{opacity:.7}
   <div class="wrap">
     <span class="news-label">お知らせ</span>
     <ul>
+      <li><time>2026.08</time><span>AIプラットフォーム開発アプリ「Verdent」の活用を進めています</span></li>
       <li><time>2026.08</time><span>AIアニメ「うにゃころり」で、消費税をテーマにした全5話の解説シリーズの制作を進めています</span></li>
       <li><time>2026.07</time><span>3D生成AIサービス「Meshy」とのタイアップ動画を「うにゃころり」で公開しました</span></li>
       <li><time>2026.07</time><span>AIアニメ「うにゃころり」が、シンガポールのAIストーリーブランド「AZ8 Theater」のコンテストに選出され、動画制作の依頼を受けました</span></li>
       <li><time>2026.07</time><span>予測市場サービス向けに、たこ焼きキャラクターを使ったAI生成コンテンツシリーズの制作を進行中です</span></li>
       <li><time>2026.07</time><span>公式ホームページを公開しました</span></li>
     </ul>
+    <div class="rv" style="margin-top:28px;padding:22px 20px;background:#fff;border:1px solid var(--line);border-radius:14px;text-align:center">
+      <div style="font-weight:bold;font-size:1.05rem;letter-spacing:.04em;margin-bottom:10px">うにゃころサポーター</div>
+      <p style="margin:0;font-size:.9rem;line-height:1.9;color:var(--ink-soft)">AI生成アニメで、障がいのある方をサポートします。<br>企業様の案件をお受けし、その収益で無料支援を続けます。</p>
+    </div>
   </div>
 </div>
 
@@ -725,6 +737,7 @@ a.acct:hover{opacity:.7}
     <span>障がいの有無を超えた共生社会をつくる｜大阪市中央区東高麗橋</span>
     <span class="foot-sns"><a href="https://www.instagram.com/unyakorori/" target="_blank" rel="noopener">うにゃころり</a><a href="https://www.instagram.com/bushi.ne/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@netern3317" target="_blank" rel="noopener">TikTok</a></span>
     <span>&copy; 2026 NPO TORERUN</span>
+    <span style="margin-top:10px;opacity:.55;font-size:.78rem;letter-spacing:.08em">うにゃころサポーター</span>
   </div>
 </footer>
 
