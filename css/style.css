@@ -409,6 +409,11 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;border:none;o
   padding:12px 14px;border-left:3px solid #2F6B5F;background:#faf8f4;
   font-size:.86rem;color:#555;border-radius:6px;
 }
+.latest-news__item time{
+  display:inline-block;margin-right:10px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.8rem;letter-spacing:.06em;color:#C8A86B;font-weight:600;
+}
 @media(min-width:768px){
   .latest-news{flex-direction:row;align-items:center;justify-content:space-between;padding:28px 34px}
   .latest-news__label{flex:0 0 220px}
